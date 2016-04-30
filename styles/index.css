@@ -134,29 +134,17 @@ body *
     -moz-user-select: none;
     user-select: none;
     outline: none;
+    box-shadow: 3px 3px black;
 }
 
 .main-action-button:hover
 {
-     box-shadow: 3px 3px black;
+     box-shadow: 5px 5px black;
 }
 
 .main-action-button:active
 {
      color: #CC0000;
-}
-
-@media screen and (max-width: 600px) {
-    .header
-    {
-        font-size: 2em;
-        margin: 0;
-    }
-
-    .wrap-margin-top
-    {
-        margin-top: 5px;
-    }
 }
 
 
@@ -188,7 +176,7 @@ body *
 {
     width: 100%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     overflow: hidden;
     white-space: normal;
 }
@@ -237,4 +225,30 @@ body *
 .quiz__answer-button--correct
 {
     color: green;
+}
+
+.quiz-next-button
+{
+    font-size: 1.5em;
+    margin-left: 5px;
+}
+
+
+/*MEDIA*/
+@media screen and (max-width: 600px) {
+    .header
+    {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    .wrap-margin-top
+    {
+        margin-top: 5px;
+    }
+
+    .quiz-header
+    {
+        margin: 5px;
+    }
 }

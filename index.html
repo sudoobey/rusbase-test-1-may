@@ -49,7 +49,7 @@
             <div class="quiz-item" data-bind="
                 css: {'quiz-item--disabled': $root.currentQuestion() !== $index()},
                 attr: {disabled: $root.currentQuestion() !== $index()}">
-                <h3 data-bind="text: title"></h3>
+                <h3 class="quiz-header" data-bind="text: title"></h3>
 
                 <div class="wrap wrap--xl-flexbox wrap--sm-1 wrap--xl-2 wrap--xl-top wrap--xl-gutter-24">
                     <div class="wrap__col wrap__col--sm-1-1 wrap__col--xl-1-2">
@@ -65,8 +65,8 @@
                                 css: {
                                     'quiz__answer-button--wrong': $parent.selected() === $index() &&
                                         !$parent.answerIsCorrect(),
-                                    'quiz__answer-button--correct': $parent.selected() === $index() &&
-                                        $parent.answerIsCorrect()
+                                    'quiz__answer-button--correct': $index() === $parent.correct_answer &&
+                                        $parent.isSelected()
                                 },
                                 click: function() {$parent.selectAnswer($index());},
                                 text: $data
@@ -75,10 +75,10 @@
                         </div>
                         <!-- ko if: isSelected -->
                             <!-- ko if: ($index() + 1) < ko.unwrap($root.questions).length -->
-                            <button type="button" name="button" data-bind="click: function() {$root.currentQuestion($index() + 1);}">далее</button>
+                            <button class="quiz-next-button" type="button" data-bind="click: function() {$root.currentQuestion($index() + 1);}">далее</button>
                             <!-- /ko -->
                             <!-- ko if: ($index() + 1) === ko.unwrap($root.questions).length -->
-                            <button type="button" name="button" data-bind="click: function() {$root.finish();}">кончить</button>
+                            <button class="quiz-next-button" type="button" data-bind="click: function() {$root.finish();}">кончить</button>
                             <!-- /ko -->
                         <!-- /ko -->
                     </div>
