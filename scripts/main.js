@@ -58,7 +58,7 @@
 
     AppViewModel.prototype.getPicture = function(correct, questionsCount) {
         if (correct === questionsCount) {
-            return 'https://pp.vk.me/c629420/v629420694/4a629/S488sz5rX8A.jpg';
+            return 'https://pp.vk.me/c629420/v629420694/4a665/tGwTC5Eom4g.jpg';
         } else if (correct > (questionsCount / 2)) {
             return 'https://pp.vk.me/c629420/v629420694/4a629/S488sz5rX8A.jpg';
         } else {
