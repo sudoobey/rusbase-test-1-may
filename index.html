@@ -91,10 +91,13 @@
 
 <section class="page page--scroll page--result" data-bind="visible: currentPage() === 'result'" style="display: none">
     <div class="content">
-        <h1 class="header">О, Сталин! <span style="color: blue;" data-bind="text: correctAnswersCount"></span> из <span style="color: blue;" data-bind="text: questions().length"></span></h1>
+        <h1 class="header"><span data-bind="text: result_text"> <span style="color: blue;" data-bind="text: correctAnswersCount"></span> из <span style="color: blue;" data-bind="text: questions().length"></span></h1>
+
 
         <div class="wrap wrap--xl-center">
             <div class="wrap__col">
+                <img style="width: 75%;" data-bind="attr: {src: result_picture}"/>
+
                 <p>Сдал норму сам — расскажи друзьям!</p>
                 <div id="yandex-share"></div>
             </div>

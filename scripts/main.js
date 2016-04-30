@@ -42,6 +42,8 @@
         }));
 
         this.correctAnswersCount = ko.observable(0);
+        this.result_picture = ko.observable();
+        this.result_text = ko.observable();
     }
 
     AppViewModel.prototype.init = function() {
@@ -54,19 +56,58 @@
         });
     };
 
+    AppViewModel.prototype.getPicture = function(correct, questionsCount) {
+        if (correct === questionsCount) {
+            return 'https://pp.vk.me/c629420/v629420694/4a629/S488sz5rX8A.jpg';
+        } else if (correct > (questionsCount / 2)) {
+            return 'https://pp.vk.me/c629420/v629420694/4a629/S488sz5rX8A.jpg';
+        } else {
+            return 'https://pp.vk.me/c629420/v629420694/4a620/-zvo5kKiHP4.jpg';
+        }
+    };
+
+    AppViewModel.prototype.getText = function(correct, questionsCount) {
+        if (correct === questionsCount) {
+            return 'Вы — превосходный труженник!';
+        } else if (correct > (questionsCount / 2)) {
+            return 'Вы — ударник социалистического труда!';
+        } else {
+            return 'Сталина на вас нет!';
+        }
+    };
+
+    AppViewModel.prototype.getTextForShare = function(correct, questionsCount) {
+        if (correct === questionsCount) {
+            return 'Я — превосходный труженник!';
+        } else if (correct > (questionsCount / 2)) {
+            return 'Я — ударник социалистического труда!';
+        } else {
+            return 'Сталина на меня нет!';
+        }
+    };
+
     AppViewModel.prototype.finish = function() {
         var questions = ko.unwrap(this.questions);
         var correctAnswersCount = questions.reduce(function(prev, question) {
             var value = question.answerIsCorrect() ? 1 : 0;
             return prev + value;
         }, 0);
+        var resultPicture = this.getPicture(
+            correctAnswersCount, questions.length);
+        this.result_picture(resultPicture);
+        this.result_text(this.getText(
+            correctAnswersCount, questions.length));
+
+        var shareText = this.getTextForShare(
+            correctAnswersCount, questions.length);
+
         this.correctAnswersCount(correctAnswersCount);
         this.currentPage('result');
         this.share.updateContent({
-            title: 'Отвечу на призыв к работе! ' +
+            title: shareText + ' ' +
                 correctAnswersCount + ' из ' + questions.length,
             description: 'Пройди тест на знание советских плакатов и ты!',
-            image: 'https://pp.vk.me/c629420/v629420694/4a4ad/4gmusyvxi8g.jpg'
+            image: resultPicture
         });
     };
 
