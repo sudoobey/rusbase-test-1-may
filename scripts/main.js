@@ -63,8 +63,9 @@
         this.correctAnswersCount(correctAnswersCount);
         this.currentPage('result');
         this.share.updateContent({
-            title: 'Shiny share button',
-            description: 'To rule them all',
+            title: 'Отвечу на призыв к работе! ' +
+                correctAnswersCount + ' из ' + questions.length,
+            description: 'Пройди тест на знание советских плакатов и ты!',
             image: 'https://pp.vk.me/c629420/v629420694/4a4ad/4gmusyvxi8g.jpg'
         });
     };

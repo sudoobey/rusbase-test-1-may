@@ -193,18 +193,48 @@ body *
     white-space: normal;
 }
 
+.quiz-item--disabled
+{
+    pointer-events: none;
+    -moz-user-focus: ignore;
+    user-focus: ignore;
+}
+
+.quiz__answers
+{
+    padding: 0 5px;
+}
+
 .quiz__answers--disabled
 {
     pointer-events: none;
     opacity: 0.5;
 }
 
-.quiz__answer--wrong
+.quiz__answer-button
+{
+    font-size: 2em;
+    width: 100%;
+    border: 2px solid;
+    margin-bottom: 5px;
+    padding: 0 5px;
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.quiz__answer-button:hover
+{
+    box-shadow: 3px 3px black;
+}
+
+.quiz__answer-button--wrong
 {
     color: red;
 }
 
-.quiz__answer--correct
+.quiz__answer-button--correct
 {
     color: green;
 }
