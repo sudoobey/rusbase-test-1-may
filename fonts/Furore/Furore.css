@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'FuroreRegular';
+    src: url('FuroreRegular.eot');
+    src: url('FuroreRegular.eot?#iefix')format('embedded-opentype'),
+    url('FuroreRegular.woff') format('woff'),
+    url('FuroreRegular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}

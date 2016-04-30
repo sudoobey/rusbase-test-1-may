@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>Всё идёт по плану</title>
+    <link rel="stylesheet" href="styles/grid.css">
+    <link rel="stylesheet" href="styles/index.css">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="fonts/Furore/Furore.css">
+</head>
+<body>
+
+<section class="page page--main" data-bind="visible: currentPage() === 'main'">
+    <div class="content">
+        <h1 class="header">Эй, товарищ, не&nbsp;зевай!<br>Пройди тест на первомай!</h1>
+
+        <div class="wrap-center">
+            <div class="wrap-center__col">
+                <div class="soviet-hammer-and-sickle">
+                    <div class="sunburst">
+                        <div class="sunburst__outer">
+                            <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+                        </div>
+                    </div>
+                    <img class="soviet-hammer-and-sickle__picture" src="resources/pictures/communist-star.svg"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-center wrap-margin-top">
+            <div class="wrap-center__col">
+                <button class="main-action-button" type="button" data-bind="click: function() {
+                    $root.currentPage('quiz');
+                }">Готов!</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page page--scroll page--quiz" data-bind="visible: currentPage() === 'quiz'" style="display: none">
+    <div class="content">
+        <section class="quiz-container">
+            <div class="quiz-wrap" data-bind="
+            style: {transform: 'translateX(-'+ currentQuestion() * 100 +'%)'},
+            foreach: questions
+            ">
+            <div class="quiz-item">
+                <h3 data-bind="text: title"></h3>
+
+                <div class="wrap wrap--xl-flexbox wrap--sm-1 wrap--xl-2 wrap--xl-top wrap--xl-gutter-24">
+                    <div class="wrap__col wrap__col--sm-1-1 wrap__col--xl-1-2">
+                        <img style="width: 100%;" data-bind="attr: {src: picture_result}, visible: isSelected"/>
+                        <img style="width: 100%;" data-bind="attr: {src: picture_hide}, visible: !isSelected()"/>
+                    </div>
+                    <div class="wrap__col wrap__col--sm-1-1 wrap__col--xl-1-2">
+                        <ul class="quiz__answers" data-bind="
+                            css: {'quiz__answers--disabled': isSelected},
+                            foreach: answers
+                            ">
+                            <li class="quiz__answer" data-bind="
+                                css: {
+                                    'quiz__answer--wrong': $parent.selected() === $index() &&
+                                        !$parent.answerIsCorrect(),
+                                    'quiz__answer--correct': $parent.selected() === $index() &&
+                                        $parent.answerIsCorrect()
+                                },
+                                click: function() {$parent.selectAnswer($index());}
+                                ">
+                                <span class="quiz__answer-text" data-bind="text: $data"></span>
+                            </li>
+                        </ul>
+                        <!-- ko if: isSelected -->
+                            <!-- ko if: ($index() + 1) < ko.unwrap($root.questions).length -->
+                            <button type="button" name="button" data-bind="click: function() {$root.currentQuestion($index() + 1);}">далее</button>
+                            <!-- /ko -->
+                            <!-- ko if: ($index() + 1) === ko.unwrap($root.questions).length -->
+                            <button type="button" name="button" data-bind="click: function() {$root.finish();}">кончить</button>
+                            <!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<section class="page page--scroll page--result" data-bind="visible: currentPage() === 'result'" style="display: none">
+    <div class="content">
+        <h1>Поздравляем, у вас <span data-bind="text: correctAnswersCount"></span> правильных ответа из <span data-bind="text: questions().length"></span></h1>
+
+        <div id="yandex-share"></div>
+    </div>
+</section>
+
+<!-- js:polifyls -->
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
+
+<!-- js:vendor -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+
+<!-- js:main -->
+<script src="scripts/data.js"></script>
+<script src="scripts/lib.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
