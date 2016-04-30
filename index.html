@@ -3,7 +3,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8">
-    <title>Всё идёт по плану</title>
+    <title>Rusbase.com &middot; C Первым Мая, Дорогая!</title>
+
+    <meta property="og:title" content="C Первым Мая, Дорогая!"/>
+    <meta property="og:image" content="https://pp.vk.me/c629420/v629420694/4a629/S488sz5rX8A.jpg"/>
+    <meta property="og:site_name" content="Очередной квиз от Rusbases"/>
+    <meta property="og:description" content="Узнакй насколько ты готов к труду и обороне!">
+
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/index.css">
 
@@ -75,10 +81,10 @@
                         </div>
                         <!-- ko if: isSelected -->
                             <!-- ko if: ($index() + 1) < ko.unwrap($root.questions).length -->
-                            <button class="quiz-next-button" type="button" data-bind="click: function() {$root.currentQuestion($index() + 1);}">далее</button>
+                            <button tabindex="-1" class="quiz-next-button" type="button" data-bind="click: function() {$root.currentQuestion($index() + 1);}">далее</button>
                             <!-- /ko -->
                             <!-- ko if: ($index() + 1) === ko.unwrap($root.questions).length -->
-                            <button class="quiz-next-button" type="button" data-bind="click: function() {$root.finish();}">кончить</button>
+                            <button tabindex="-1" class="quiz-next-button" type="button" data-bind="click: function() {$root.finish();}">кончить</button>
                             <!-- /ko -->
                         <!-- /ko -->
                     </div>
