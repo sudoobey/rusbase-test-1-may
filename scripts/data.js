@@ -1,6 +1,6 @@
 window.DATA = [
     {
-        title: 'Что закрашено?',
+        title: 'Начнём с простого. Что тут закрашено?',
         picture_name: '1-banya',
         correct_answer: 2,
         answers: [
@@ -11,7 +11,7 @@ window.DATA = [
         ]
     },
     {
-        title: 'Что закрашено?',
+        title: 'Кого разводили в СССР?',
         picture_name: '2-crolic',
         correct_answer: 1,
         answers: [
@@ -22,7 +22,7 @@ window.DATA = [
         ]
     },
     {
-        title: 'Что закрашено?',
+        title: 'Выбери напарника милой девушке.',
         picture_name: '3-vzyali',
         correct_answer: 0,
         answers: [
@@ -33,7 +33,7 @@ window.DATA = [
         ]
     },
     {
-        title: 'Что закрашено?',
+        title: 'Пусть меня научат!',
         picture_name: '4-stroit',
         correct_answer: 1,
         answers: [
@@ -44,7 +44,7 @@ window.DATA = [
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Мне нравится. Расскажу товарищам.',
         picture_name: '5-kachestvo',
         correct_answer: 3,
         answers: [
@@ -55,7 +55,7 @@ window.DATA = [
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Сегодня на митапе у менеджеров по продажам:',
         picture_name: '6-torgovat',
         correct_answer: 2,
         answers: [
@@ -66,29 +66,29 @@ window.DATA = [
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Не бей, подумай!',
         picture_name: '7-dolbanyom',
         correct_answer: 0,
         answers: [
             'Алкоголь',
             'Гомункул',
             'Кувалда',
-            'Бюрократ'
+            'Капиталист'
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Весной по московской грязи по-другому не пройдёшь',
         picture_name: '8-inzener',
         correct_answer: 0,
         answers: [
             'Молодой инженер',
-            'Бюрократ',
+            'Хипстер',
             'Член партии',
             'Студент'
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: '…',
         picture_name: '9-svinovodstvo',
         correct_answer: 0,
         answers: [
@@ -99,17 +99,17 @@ window.DATA = [
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'IN SOVIET RUSSIA STOOL SITTING ON YOU',
         picture_name: '10-next',
         correct_answer: 2,
         answers: [
-            'Гони в шею наркотики из свой жизни!',
+            'Гони в шею наркотики из с вой жизни!',
             'Выводи глистов правильно, вовремя, аккуратно!',
             'Гад-бюрократ засорил советский аппарат. Гони его прочь, рабочий отряд!'
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Когда едешь с пакетами из Ашана',
         picture_name: '11-goroda',
         correct_answer: 1,
         answers: [
@@ -120,18 +120,18 @@ window.DATA = [
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Ага',
         picture_name: '12-dirizhabl',
         correct_answer: 3,
         answers: [
+            'Бог',
             'Завод',
             'Народ',
-            'Кукурузник',
             'Дирижабль'
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Не закладка!',
         picture_name: '13-serp',
         correct_answer: 0,
         answers: [
@@ -141,21 +141,21 @@ window.DATA = [
              ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'В беленькой рубашке',
         picture_name: '14-noch',
         correct_answer: 2,
         answers: [
-            'Вперед, к мечте!',
+            'Пётр на тракторе едет к мечте!',
             'Включай фары на комбаине в ночное время суток!',
             'Ночь — работе не помеха!'
         ]
     },
      {
-        title: 'Что закрашено?',
+        title: 'Это знает всякий',
         picture_name: '15-textil',
         correct_answer: 2,
         answers: [
-            'Принимайте солнечные ванны!',
+            'Макароны — лучшая еда для студента!',
             'Соедини землю и небо — иди в космонавты!',
             'Молодежь — в текстильную промышленность!',
             'Швея! Бережно относись к швейным нитям!'
