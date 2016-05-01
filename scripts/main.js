@@ -111,7 +111,9 @@
         });
     };
 
-    window.m_site = new AppViewModel();
-    window.m_site.init();
-    ko.applyBindings(window.m_site);
+    document.addEventListener('DOMContentLoaded', function() {
+        window.m_site = new AppViewModel();
+        window.m_site.init();
+        ko.applyBindings(window.m_site);
+    });
 })();
