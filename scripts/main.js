@@ -49,7 +49,8 @@
     AppViewModel.prototype.init = function() {
         this.share = Ya.share2('yandex-share', {
             theme: {
-                services: 'vkontakte,facebook,twitter',
+                services: 'vkontakte,facebook,twitter,' +
+                    'odnoklassniki,moimir,whatsapp',
                 counter: true,
                 lang: 'ru'
             }
